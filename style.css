@@ -1,0 +1,131 @@
+@import url(./fonts/fonts.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    background-color: black;
+    background-image: url(./img/back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "StratosSkyeng", sans-serif;
+    font-weight: 400;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+    line-height: 100%;
+}
+
+.timer__inputs {
+    display: flex;
+    padding: 15px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    font-size: 86px;
+    color: white;
+    border-radius: 20px;
+    background-color: rgba(192, 163, 255, 0.40);
+}
+
+.timer__input {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 95px;
+    font-size: inherit;
+    color: inherit;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Правила ниже выключают кнопки со стрелками в браузерах на базе Google Chrome */
+.timer__input::-webkit-outer-spin-button,
+.timer__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Эти правила нужны, чтобы выключать кнопки в других браузерах */
+.timer__input {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.timer__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.timer__buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 40px;
+    line-height: 100%;
+    font-weight: 400;
+    transition: .2s;
+}
+
+.button:hover {
+    opacity: .8 !important; /* !important - специальная декларация, ставит самый высокий приоритет для свойства; нужна тут, чтобы перекрыть правило, написанное через JS (ДЗ) */
+    cursor: pointer;
+}
+
+.button__start {
+    background-color: rgba(100, 229, 183, 0.40);
+}
+
+.button__stop {
+    background-color: rgba(229, 108, 100, 0.40);
+}
+
+.hide {
+    display: none;
+}
+
+/* Тут не написано "screen and ...", потому что так тоже допускается, пока */
+@media (max-width: 768px) {
+    .timer__inputs {
+        font-size: 34px;
+        padding: 15px 20px;
+    }
+
+    .timer__input {
+        width: 36px;
+    }
+
+    .button {
+        padding: 10px 30px;
+        font-size: 34px;
+    }
+}
